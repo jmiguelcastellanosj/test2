@@ -1,0 +1,378 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000001, pid=800, tid=2632
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_51-b13) (build 1.7.0_51-b13)
+# Java VM: Java HotSpot(TM) Client VM (24.51-b03 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  0x00000001
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08acb800):  JavaThread "Thread-2" [_thread_in_native, id=2632, stack(0x000e0000,0x001e0000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x00000008 0x00000001
+
+Registers:
+EAX=0x5c058ff8, EBX=0x00000000, ECX=0x001df1c0, EDX=0x04b5ba2c
+ESP=0x001df188, EBP=0x001df1b8, ESI=0x08acb930, EDI=0x05a2b5d8
+EIP=0x00000001, EFLAGS=0x00210246
+
+Top of Stack: (sp=0x001df188)
+0x001df188:   6baf80d1 05a2b5d8 000001f6 08b83170
+0x001df198:   001df1c0 001df1b4 08acb800 337a5258
+0x001df1a8:   337a5258 08b83170 00000000 00000000
+0x001df1b8:   001df1c8 6baf9198 00000000 001df218
+0x001df1c8:   001df208 05d8a9dd 08acb930 001df224
+0x001df1d8:   05a2b5d8 00000000 001df218 04b5ba44
+0x001df1e8:   001df1e8 337a5258 001df224 337ad2b0
+0x001df1f8:   00000000 337a5258 00000000 001df218 
+
+Instructions: (pc=0x00000001)
+0xffffffe1:   
+
+
+Register to memory mapping:
+
+EAX=0x5c058ff8 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x001df1c0 is pointing into the stack for thread: 0x08acb800
+EDX=0x04b5ba2c is an unknown value
+ESP=0x001df188 is pointing into the stack for thread: 0x08acb800
+EBP=0x001df1b8 is pointing into the stack for thread: 0x08acb800
+ESI=0x08acb930 is an unknown value
+EDI=0x05a2b5d8 is an unknown value
+
+
+Stack: [0x000e0000,0x001e0000],  sp=0x001df188,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x00000001
+C  [npjp2.dll+0x9198]
+j  sun.plugin2.main.server.MozillaPlugin.getProxy0(JLjava/lang/String;)Ljava/lang/String;+0
+j  sun.plugin2.main.server.MozillaPlugin.getProxy(Ljava/lang/String;)Ljava/lang/String;+17
+j  sun.plugin2.main.server.MozillaBrowserService$MozillaProxyHandler.findProxyForURL(Ljava/lang/String;)Ljava/lang/String;+7
+j  com.sun.deploy.net.proxy.AbstractBrowserProxyHandler.getProxyInfo(Ljava/net/URL;)[Lcom/sun/deploy/net/proxy/ProxyInfo;+5
+j  com.sun.deploy.net.proxy.DynamicProxyManager.getProxyList(Ljava/net/URL;Z)Ljava/util/List;+113
+j  sun.plugin2.main.server.ProxySupport.getProxyReply(Lsun/plugin2/main/server/Plugin;Lsun/plugin2/message/GetProxyMessage;)Lsun/plugin2/message/ProxyReplyMessage;+20
+j  sun.plugin2.main.server.JVMInstance$1.run()V+26
+j  sun.plugin2.main.server.MozillaPlugin$RunnableWrapper.run()V+4
+j  sun.plugin2.main.server.MozillaPlugin.drainRunnableQueue()V+39
+j  sun.plugin2.main.server.MozillaPlugin.access$000(Lsun/plugin2/main/server/MozillaPlugin;)V+1
+j  sun.plugin2.main.server.MozillaPlugin$DrainRunnableQueue.run()V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x13f35a]
+V  [jvm.dll+0x202c6e]
+V  [jvm.dll+0x13f3dd]
+V  [jvm.dll+0xc9bc2]
+V  [jvm.dll+0xcd813]
+C  [npjp2.dll+0x203f]
+C  [xul.dll+0x58de1e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.plugin2.main.server.MozillaPlugin.getProxy0(JLjava/lang/String;)Ljava/lang/String;+0
+j  sun.plugin2.main.server.MozillaPlugin.getProxy(Ljava/lang/String;)Ljava/lang/String;+17
+j  sun.plugin2.main.server.MozillaBrowserService$MozillaProxyHandler.findProxyForURL(Ljava/lang/String;)Ljava/lang/String;+7
+j  com.sun.deploy.net.proxy.AbstractBrowserProxyHandler.getProxyInfo(Ljava/net/URL;)[Lcom/sun/deploy/net/proxy/ProxyInfo;+5
+j  com.sun.deploy.net.proxy.DynamicProxyManager.getProxyList(Ljava/net/URL;Z)Ljava/util/List;+113
+j  sun.plugin2.main.server.ProxySupport.getProxyReply(Lsun/plugin2/main/server/Plugin;Lsun/plugin2/message/GetProxyMessage;)Lsun/plugin2/message/ProxyReplyMessage;+20
+j  sun.plugin2.main.server.JVMInstance$1.run()V+26
+j  sun.plugin2.main.server.MozillaPlugin$RunnableWrapper.run()V+4
+j  sun.plugin2.main.server.MozillaPlugin.drainRunnableQueue()V+39
+j  sun.plugin2.main.server.MozillaPlugin.access$000(Lsun/plugin2/main/server/MozillaPlugin;)V+1
+j  sun.plugin2.main.server.MozillaPlugin$DrainRunnableQueue.run()V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x08a54c00 JavaThread "Thread-5" daemon [_thread_in_native, id=3760, stack(0x094a0000,0x095a0000)]
+  0x08acc400 JavaThread "Thread-4" daemon [_thread_blocked, id=3360, stack(0x09710000,0x09810000)]
+  0x08acbc00 JavaThread "Thread-3" daemon [_thread_blocked, id=1664, stack(0x086c0000,0x087c0000)]
+=>0x08acb800 JavaThread "Thread-2" [_thread_in_native, id=2632, stack(0x000e0000,0x001e0000)]
+  0x08a96800 JavaThread "JVM[id=1]-Heartbeat" [_thread_blocked, id=1188, stack(0x03fb0000,0x040b0000)]
+  0x08ac8000 JavaThread "JRE 1.7.0.51 Worker Thread" [_thread_blocked, id=3676, stack(0x09840000,0x09940000)]
+  0x08ac0c00 JavaThread "JRE 1.7.0.51 Output Reader Thread" [_thread_in_native, id=1772, stack(0x095b0000,0x096b0000)]
+  0x08ac0800 JavaThread "JRE 1.7.0.51 Output Reader Thread" [_thread_in_native, id=2560, stack(0x093a0000,0x094a0000)]
+  0x08ac1800 JavaThread "Thread-1" [_thread_in_native, id=3208, stack(0x08c00000,0x08d00000)]
+  0x08abc400 JavaThread "Java Plug-In Pipe Worker Thread (Server-Side)" daemon [_thread_in_native, id=3712, stack(0x09250000,0x09350000)]
+  0x08a01c00 JavaThread "Thread-0" daemon [_thread_blocked, id=1168, stack(0x08f30000,0x09030000)]
+  0x08a04800 JavaThread "traceMsgQueueThread" daemon [_thread_blocked, id=1712, stack(0x08d70000,0x08e70000)]
+  0x04b55400 JavaThread "Service Thread" daemon [_thread_blocked, id=3116, stack(0x087c0000,0x088c0000)]
+  0x04b50800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1220, stack(0x085b0000,0x086b0000)]
+  0x04b4d400 JavaThread "Attach Listener" daemon [_thread_blocked, id=2652, stack(0x08320000,0x08420000)]
+  0x04b4a000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2288, stack(0x084a0000,0x085a0000)]
+  0x04adf000 JavaThread "Finalizer" daemon [_thread_blocked, id=2936, stack(0x08210000,0x08310000)]
+  0x04addc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=1192, stack(0x07fe0000,0x080e0000)]
+  0x03dec800 JavaThread "main" [_thread_in_native, id=3768, stack(0x05c80000,0x05d80000)]
+
+Other Threads:
+  0x04adc000 VMThread [stack: 0x07e30000,0x07f30000] [id=2732]
+  0x04b66c00 WatcherThread [stack: 0x088f0000,0x089f0000] [id=328]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 2930K [0x31790000, 0x31ce0000, 0x32230000)
+  eden space 4416K,  54% used [0x31790000, 0x319ecb90, 0x31be0000)
+  from space 512K, 100% used [0x31be0000, 0x31c60000, 0x31c60000)
+  to   space 512K,   0% used [0x31c60000, 0x31c60000, 0x31ce0000)
+ tenured generation   total 10944K, used 1470K [0x32230000, 0x32ce0000, 0x33790000)
+   the space 10944K,  13% used [0x32230000, 0x3239fb38, 0x3239fc00, 0x32ce0000)
+ compacting perm gen  total 12288K, used 2483K [0x33790000, 0x34390000, 0x37790000)
+   the space 12288K,  20% used [0x33790000, 0x339fcee8, 0x339fd000, 0x34390000)
+    ro space 10240K,  41% used [0x37790000, 0x37bc2050, 0x37bc2200, 0x38190000)
+    rw space 12288K,  52% used [0x38190000, 0x387d6800, 0x387d6800, 0x38d90000)
+
+Card table byte_map: [0x03470000,0x034b0000] byte_map_base: 0x032e4380
+
+Polling page: 0x03320000
+
+Code Cache  [0x05d80000, 0x05e80000, 0x07d80000)
+ total_blobs=424 nmethods=242 adapters=119 free_code_cache=31751Kb largest_free_block=32513088
+
+Compilation events (10 events):
+Event: 30.344 Thread 0x04b50800  238             java.util.HashMap$HashIterator::<init> (63 bytes)
+Event: 30.344 Thread 0x04b50800 nmethod 238 0x05e7d148 code [0x05e7d240, 0x05e7d330]
+Event: 30.345 Thread 0x04b50800  239             java.lang.String::equalsIgnoreCase (48 bytes)
+Event: 30.345 Thread 0x04b50800 nmethod 239 0x05e7d408 code [0x05e7d510, 0x05e7d61c]
+Event: 30.379 Thread 0x04b50800  240             java.util.Properties::load0 (250 bytes)
+Event: 30.380 Thread 0x04b50800 nmethod 240 0x05e7d708 code [0x05e7d850, 0x05e7db70]
+Event: 30.389 Thread 0x04b50800  241             java.lang.StringBuilder::<init> (7 bytes)
+Event: 30.389 Thread 0x04b50800 nmethod 241 0x05e7dec8 code [0x05e7dfc0, 0x05e7e0d0]
+Event: 30.391 Thread 0x04b50800  242             java.lang.String::endsWith (17 bytes)
+Event: 30.391 Thread 0x04b50800 nmethod 242 0x05e7e148 code [0x05e7e250, 0x05e7e2fc]
+
+GC Heap History (4 events):
+Event: 30.160 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x31790000, 0x31ce0000, 0x32230000)
+  eden space 4416K, 100% used [0x31790000, 0x31be0000, 0x31be0000)
+  from space 512K,   0% used [0x31be0000, 0x31be0000, 0x31c60000)
+  to   space 512K,   0% used [0x31c60000, 0x31c60000, 0x31ce0000)
+ tenured generation   total 10944K, used 0K [0x32230000, 0x32ce0000, 0x33790000)
+   the space 10944K,   0% used [0x32230000, 0x32230000, 0x32230200, 0x32ce0000)
+ compacting perm gen  total 12288K, used 1704K [0x33790000, 0x34390000, 0x37790000)
+   the space 12288K,  13% used [0x33790000, 0x3393a108, 0x3393a200, 0x34390000)
+    ro space 10240K,  41% used [0x37790000, 0x37bc2050, 0x37bc2200, 0x38190000)
+    rw space 12288K,  52% used [0x38190000, 0x387d6800, 0x387d6800, 0x38d90000)
+Event: 30.169 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 512K [0x31790000, 0x31ce0000, 0x32230000)
+  eden space 4416K,   0% used [0x31790000, 0x31790000, 0x31be0000)
+  from space 512K, 100% used [0x31c60000, 0x31ce0000, 0x31ce0000)
+  to   space 512K,   0% used [0x31be0000, 0x31be0000, 0x31c60000)
+ tenured generation   total 10944K, used 644K [0x32230000, 0x32ce0000, 0x33790000)
+   the space 10944K,   5% used [0x32230000, 0x322d1278, 0x322d1400, 0x32ce0000)
+ compacting perm gen  total 12288K, used 1704K [0x33790000, 0x34390000, 0x37790000)
+   the space 12288K,  13% used [0x33790000, 0x3393a108, 0x3393a200, 0x34390000)
+    ro space 10240K,  41% used [0x37790000, 0x37bc2050, 0x37bc2200, 0x38190000)
+    rw space 12288K,  52% used [0x38190000, 0x387d6800, 0x387d6800, 0x38d90000)
+}
+Event: 30.279 GC heap before
+{Heap before GC invocations=1 (full 0):
+ def new generation   total 4928K, used 4928K [0x31790000, 0x31ce0000, 0x32230000)
+  eden space 4416K, 100% used [0x31790000, 0x31be0000, 0x31be0000)
+  from space 512K, 100% used [0x31c60000, 0x31ce0000, 0x31ce0000)
+  to   space 512K,   0% used [0x31be0000, 0x31be0000, 0x31c60000)
+ tenured generation   total 10944K, used 644K [0x32230000, 0x32ce0000, 0x33790000)
+   the space 10944K,   5% used [0x32230000, 0x322d1278, 0x322d1400, 0x32ce0000)
+ compacting perm gen  total 12288K, used 2270K [0x33790000, 0x34390000, 0x37790000)
+   the space 12288K,  18% used [0x33790000, 0x339c78b0, 0x339c7a00, 0x34390000)
+    ro space 10240K,  41% used [0x37790000, 0x37bc2050, 0x37bc2200, 0x38190000)
+    rw space 12288K,  52% used [0x38190000, 0x387d6800, 0x387d6800, 0x38d90000)
+Event: 30.286 GC heap after
+Heap after GC invocations=2 (full 0):
+ def new generation   total 4928K, used 512K [0x31790000, 0x31ce0000, 0x32230000)
+  eden space 4416K,   0% used [0x31790000, 0x31790000, 0x31be0000)
+  from space 512K, 100% used [0x31be0000, 0x31c60000, 0x31c60000)
+  to   space 512K,   0% used [0x31c60000, 0x31c60000, 0x31ce0000)
+ tenured generation   total 10944K, used 1470K [0x32230000, 0x32ce0000, 0x33790000)
+   the space 10944K,  13% used [0x32230000, 0x3239fb38, 0x3239fc00, 0x32ce0000)
+ compacting perm gen  total 12288K, used 2270K [0x33790000, 0x34390000, 0x37790000)
+   the space 12288K,  18% used [0x33790000, 0x339c78b0, 0x339c7a00, 0x34390000)
+    ro space 10240K,  41% used [0x37790000, 0x37bc2050, 0x37bc2200, 0x38190000)
+    rw space 12288K,  52% used [0x38190000, 0x387d6800, 0x387d6800, 0x38d90000)
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.014 Thread 0x03dec800 Threw 0x31795750 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jni.cpp:3991
+Event: 0.092 Thread 0x03dec800 Threw 0x318609d0 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.092 Thread 0x03dec800 Threw 0x31860ae8 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.093 Thread 0x03dec800 Threw 0x31863e20 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.093 Thread 0x03dec800 Threw 0x31863f38 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.133 Thread 0x03dec800 Threw 0x318d2270 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 0.133 Thread 0x03dec800 Threw 0x318d2408 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 0.133 Thread 0x03dec800 Threw 0x318d2570 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 30.391 Thread 0x08acb800 Threw 0x319e1388 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 30.391 Thread 0x08acb800 Threw 0x319e2480 at C:\re\jdk7u51\527\hotspot\src\share\vm\prims\jvm.cpp:1244
+
+Events (10 events):
+Event: 30.393 loading class 0x08bcef88
+Event: 30.393 loading class 0x08bcef88 done
+Event: 30.393 loading class 0x08bcef00
+Event: 30.393 loading class 0x08bcef00 done
+Event: 30.393 loading class 0x08bce9e8
+Event: 30.393 loading class 0x08bce9e8 done
+Event: 30.393 loading class 0x08bce9a8
+Event: 30.393 loading class 0x08bce9a8 done
+Event: 30.393 loading class 0x08bcdb38
+Event: 30.393 loading class 0x08bcdb38 done
+
+
+Dynamic libraries:
+0x00a40000 - 0x00a8d000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\firefox.exe
+0x76ff0000 - 0x7712c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x756b0000 - 0x75784000 	C:\Windows\system32\kernel32.dll
+0x752b0000 - 0x752fb000 	C:\Windows\system32\KERNELBASE.dll
+0x5b770000 - 0x5c0de000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\xul.dll
+0x703b0000 - 0x7041f000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\sqlite3.dll
+0x6b370000 - 0x6b41e000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\MOZCRT19.dll
+0x75970000 - 0x75a1c000 	C:\Windows\system32\msvcrt.dll
+0x6b2c0000 - 0x6b36e000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\js3250.dll
+0x600b0000 - 0x600e0000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\nspr4.dll
+0x77180000 - 0x77220000 	C:\Windows\system32\ADVAPI32.dll
+0x75790000 - 0x757a9000 	C:\Windows\SYSTEM32\sechost.dll
+0x760f0000 - 0x76192000 	C:\Windows\system32\RPCRT4.dll
+0x72f10000 - 0x72f17000 	C:\Windows\system32\WSOCK32.dll
+0x75a20000 - 0x75a55000 	C:\Windows\system32\WS2_32.dll
+0x77160000 - 0x77166000 	C:\Windows\system32\NSI.dll
+0x730f0000 - 0x73122000 	C:\Windows\system32\WINMM.dll
+0x75f80000 - 0x76049000 	C:\Windows\system32\USER32.dll
+0x75560000 - 0x755ae000 	C:\Windows\system32\GDI32.dll
+0x77170000 - 0x7717a000 	C:\Windows\system32\LPK.dll
+0x76050000 - 0x760ed000 	C:\Windows\system32\USP10.dll
+0x60420000 - 0x60438000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\smime3.dll
+0x60340000 - 0x603da000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\nss3.dll
+0x603e0000 - 0x603f4000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\nssutil3.dll
+0x600f0000 - 0x600f7000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\plc4.dll
+0x600e0000 - 0x600e7000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\plds4.dll
+0x60400000 - 0x60420000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\ssl3.dll
+0x76340000 - 0x76f8a000 	C:\Windows\system32\SHELL32.dll
+0x76f90000 - 0x76fe7000 	C:\Windows\system32\SHLWAPI.dll
+0x75e20000 - 0x75f7c000 	C:\Windows\system32\ole32.dll
+0x743a0000 - 0x743a9000 	C:\Windows\system32\VERSION.dll
+0x6f280000 - 0x6f2d1000 	C:\Windows\system32\WINSPOOL.DRV
+0x757b0000 - 0x7582b000 	C:\Windows\system32\COMDLG32.dll
+0x73ea0000 - 0x7403e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x77140000 - 0x7715f000 	C:\Windows\system32\IMM32.dll
+0x755b0000 - 0x7567c000 	C:\Windows\system32\MSCTF.dll
+0x737e0000 - 0x737e5000 	C:\Windows\system32\MSIMG32.dll
+0x75830000 - 0x758bf000 	C:\Windows\system32\OLEAUT32.dll
+0x71720000 - 0x71727000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\xpcom.dll
+0x67b80000 - 0x67c6b000 	C:\Windows\system32\dbghelp.dll
+0x74f00000 - 0x74f0c000 	C:\Windows\system32\CRYPTBASE.dll
+0x73d20000 - 0x73d60000 	C:\Windows\system32\uxtheme.dll
+0x761a0000 - 0x7633d000 	C:\Windows\system32\SETUPAPI.dll
+0x750c0000 - 0x750e7000 	C:\Windows\system32\CFGMGR32.dll
+0x75090000 - 0x750a2000 	C:\Windows\system32\DEVOBJ.dll
+0x75d90000 - 0x75e13000 	C:\Windows\system32\CLBCatQ.DLL
+0x73d60000 - 0x73e55000 	C:\Windows\system32\propsys.dll
+0x73880000 - 0x738a1000 	C:\Windows\system32\ntmarta.dll
+0x75920000 - 0x75965000 	C:\Windows\system32\WLDAP32.dll
+0x738e0000 - 0x738f3000 	C:\Windows\system32\dwmapi.dll
+0x74fe0000 - 0x74feb000 	C:\Windows\system32\profapi.dll
+0x73e90000 - 0x73e98000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\components\browserdirprovider.dll
+0x749e0000 - 0x74a1c000 	C:\Windows\system32\mswsock.dll
+0x74520000 - 0x74525000 	C:\Windows\System32\wshtcpip.dll
+0x72b00000 - 0x72b1c000 	C:\Windows\system32\iphlpapi.dll
+0x72af0000 - 0x72af7000 	C:\Windows\system32\WINNSI.DLL
+0x72f20000 - 0x72f30000 	C:\Windows\system32\NLAapi.dll
+0x6f940000 - 0x6f950000 	C:\Windows\system32\napinsp.dll
+0x6f920000 - 0x6f932000 	C:\Windows\system32\pnrpnsp.dll
+0x748a0000 - 0x748e4000 	C:\Windows\system32\DNSAPI.dll
+0x6f910000 - 0x6f918000 	C:\Windows\System32\winrnr.dll
+0x73540000 - 0x73670000 	C:\Windows\system32\WindowsCodecs.dll
+0x74eb0000 - 0x74efc000 	C:\Windows\system32\apphelp.dll
+0x6e570000 - 0x6e5a1000 	C:\Windows\system32\EhStorShell.dll
+0x6d7d0000 - 0x6dbd6000 	C:\PROGRA~1\MICROS~1\Office14\GROOVEEX.DLL
+0x6e4c0000 - 0x6e563000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.4940_none_50916076bcb9a742\MSVCR90.dll
+0x6e430000 - 0x6e4be000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.4940_none_50916076bcb9a742\MSVCP90.dll
+0x6e400000 - 0x6e42b000 	C:\Windows\WinSxS\x86_microsoft.vc90.atl_1fc8b3b9a1e18e3b_9.0.30729.4148_none_51ca66a2bbe76806\ATL90.DLL
+0x6d3b0000 - 0x6d7ca000 	C:\PROGRA~1\COMMON~1\MICROS~1\OFFICE14\Cultures\office.odf
+0x6cb30000 - 0x6d3b0000 	C:\PROGRA~1\MICROS~1\Office14\3082\GrooveIntlResource.dll
+0x6e370000 - 0x6e3da000 	C:\Windows\System32\cscui.dll
+0x6e3f0000 - 0x6e3f9000 	C:\Windows\System32\CSCDLL.dll
+0x6e800000 - 0x6e80b000 	C:\Windows\system32\CSCAPI.dll
+0x6e300000 - 0x6e370000 	C:\Windows\system32\ntshrui.dll
+0x74c30000 - 0x74c49000 	C:\Windows\system32\srvcli.dll
+0x72d90000 - 0x72d9a000 	C:\Windows\system32\slc.dll
+0x74a20000 - 0x74a37000 	C:\Windows\system32\CRYPTSP.dll
+0x747c0000 - 0x747fb000 	C:\Windows\system32\rsaenh.dll
+0x74f70000 - 0x74f7e000 	C:\Windows\system32\RpcRtRemote.dll
+0x6f880000 - 0x6f8a3000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\components\brwsrcmp.dll
+0x602f0000 - 0x60316000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\softokn3.dll
+0x60320000 - 0x60338000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\nssdbm3.dll
+0x60440000 - 0x60481000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\freebl3.dll
+0x602a0000 - 0x602ec000 	C:\Users\Mecánica\Documents\moz\FirefoxPortable\App\Firefox\nssckbi.dll
+0x6baf0000 - 0x6bb1b000 	C:\Program Files\Java\jre7\bin\plugin2\npjp2.dll
+0x67460000 - 0x6751f000 	C:\Windows\system32\MSVCR100.dll
+0x5c6d0000 - 0x5ca50000 	C:\PROGRA~1\Java\jre7\bin\client\jvm.dll
+0x77130000 - 0x77135000 	C:\Windows\system32\PSAPI.DLL
+0x71300000 - 0x7130c000 	C:\PROGRA~1\Java\jre7\bin\verify.dll
+0x6e1e0000 - 0x6e200000 	C:\PROGRA~1\Java\jre7\bin\java.dll
+0x6dd90000 - 0x6dda3000 	C:\PROGRA~1\Java\jre7\bin\zip.dll
+0x67520000 - 0x675df000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x6b260000 - 0x6b2bc000 	C:\Program Files\Java\jre7\bin\deploy.dll
+0x75bb0000 - 0x75d85000 	C:\Windows\system32\WININET.dll
+0x752a0000 - 0x752a4000 	C:\Windows\system32\api-ms-win-downlevel-user32-l1-1-0.dll
+0x75290000 - 0x75294000 	C:\Windows\system32\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x75300000 - 0x75304000 	C:\Windows\system32\api-ms-win-downlevel-version-l1-1-0.dll
+0x750b0000 - 0x750b3000 	C:\Windows\system32\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x75550000 - 0x75553000 	C:\Windows\system32\normaliz.DLL
+0x75310000 - 0x75542000 	C:\Windows\system32\iertutil.dll
+0x75280000 - 0x75285000 	C:\Windows\system32\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x75100000 - 0x75117000 	C:\Windows\system32\USERENV.dll
+0x75a60000 - 0x75baa000 	C:\Windows\system32\urlmon.dll
+0x750f0000 - 0x750f4000 	C:\Windows\system32\api-ms-win-downlevel-ole32-l1-1-0.dll
+0x716d0000 - 0x716d6000 	C:\Program Files\Java\jre7\bin\jp2native.dll
+0x6a690000 - 0x6a6a4000 	C:\Program Files\Java\jre7\bin\net.dll
+0x749d0000 - 0x749d6000 	C:\Windows\System32\wship6.dll
+0x702a0000 - 0x702af000 	C:\Program Files\Java\jre7\bin\nio.dll
+0x6e1b0000 - 0x6e1df000 	C:\Windows\system32\shdocvw.dll
+0x6a5a0000 - 0x6a5c0000 	C:\Program Files\Java\jre7\bin\sunec.dll
+0x6b250000 - 0x6b259000 	C:\Program Files\Java\jre7\bin\sunmscapi.dll
+0x75150000 - 0x75271000 	C:\Windows\system32\CRYPT32.dll
+0x74ff0000 - 0x74ffc000 	C:\Windows\system32\MSASN1.dll
+0x6fd20000 - 0x6fd26000 	C:\Windows\system32\rasadhlp.dll
+0x729f0000 - 0x72a28000 	C:\Windows\System32\fwpuclnt.dll
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:C:\PROGRA~1\Java\jre7\lib\deploy.jar;C:\PROGRA~1\Java\jre7\lib\javaws.jar;C:\PROGRA~1\Java\jre7\lib\plugin.jar -Xmx32m -Djava.awt.headless=true -XX:MaxDirectMemorySize=64m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:\Program Files\Mozilla Firefox;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\DMIX
+USERNAME=Mecánica
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 37 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 3005740k(1520544k free), swap 6009732k(4627016k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.51-b03) for windows-x86 JRE (1.7.0_51-b13), built on Dec 18 2013 19:09:58 by "java_re" with unknown MS VC++:1600
+
+time: Thu Mar 12 13:40:01 2015
+elapsed time: 30 seconds
+
